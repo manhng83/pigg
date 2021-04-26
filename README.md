@@ -1,4 +1,4 @@
-# pigg
+# Pigg
 
 * Pigg CMS is a simple CMS ASP.NET MVC 4 with multilanguage, CQRS, poco classes, repository pattern, Unity, OpenId authentication
 
