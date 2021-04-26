@@ -1,0 +1,11 @@
+﻿@if (Model != null)
+{
+    if (Model is System.Dynamic.ExpandoObject && ((IDictionary<String, object>)Model).ContainsKey("Value"))
+    {
+        Model.Value.ToString();
+    }
+    else
+    {
+        Model.ToString();
+    }
+}

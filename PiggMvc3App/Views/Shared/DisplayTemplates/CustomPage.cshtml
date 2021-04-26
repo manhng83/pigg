@@ -1,0 +1,20 @@
+﻿@model Pigg.Model.CustomPage
+@if (Model == null)
+{ 
+    @ViewData.ModelMetadata.NullDisplayText
+}
+else
+{ 
+    <h1>
+        @MvcHtmlString.Create(string.IsNullOrEmpty(Model.LongTitle) ? Model.Title : Model.LongTitle)
+    </h1>
+    <div class="content">
+        @MvcHtmlString.Create(@Model.PageContent)
+    </div>
+}
+@if (HttpContext.Current.User.IsInRole("Administrators"))
+{ 
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PageId }, null)
+    </p>
+} 

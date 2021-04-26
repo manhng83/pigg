@@ -1,0 +1,9 @@
+﻿Welcome <b>
+    @Html.Encode(Context.User.Identity.Name) </b>! -
+    @*@ViewData["UserName"] </b>! -*@
+@Html.ActionLink("Log Off", "LogOff", "Account", new { Area = "" }, new { })
+@if (Roles.IsUserInRole(PiggMvc3App.Helpers.Constants.AdminRole))
+{ 
+    @MvcHtmlString.Create(" - ");
+    @Html.ActionLink("User Administration", "Index", "UserAdministration");
+} 

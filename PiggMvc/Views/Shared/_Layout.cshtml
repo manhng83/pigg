@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>    
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                <nav>
+                    <ul id="menu" data-bind="foreach: CustomPages">
+                        <li>
+                            <a data-bind="attr: { href: 'Page/GetPage?customPageId=' + CustomPageId }"><span data-bind="text: Title" /></a>
+                        </li>
+                        @if (Context.User.Identity.IsAuthenticated && (Roles.IsUserInRole("Administrator") || Roles.IsUserInRole("Editor")))
+                        {
+                            <li>
+                                @Html.ActionLink("+", "Create", "Page", new { Area = "" }, new { })
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/knockout")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/ecmascript">
+        $(function () {
+            viewModel = {};
+            viewModel.CustomPages = ko.observable([]);
+        });
+
+        $(document).ready(function () {
+            viewModel.CustomPages([]);
+            $.ajax({
+                url: "/api/CustomPages/GetRootPages?countryCode=en-GB",
+                type: "GET",
+                success: function (data) {
+                    viewModel.CustomPages(data);
+                }
+            });
+            ko.applyBindings(viewModel);
+        });
+    </script>
+</body>
+</html>

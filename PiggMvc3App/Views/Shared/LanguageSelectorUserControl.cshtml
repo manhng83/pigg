@@ -1,0 +1,6 @@
+﻿<ul class="languages">
+    @foreach (var item in ((IEnumerable<System.Globalization.CultureInfo>)ViewData[PiggMvc3App.Helpers.Constants.LanguagesExistentKey]))
+    {
+        <li>@Html.ActionLink(item.NativeName, "Index", "Home", new { Area = "", lang = item.Name }, null)</li>
+    }
+</ul>

@@ -1,0 +1,61 @@
+﻿@using PiggMvc3App.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/PiggStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MvcMembership.css")" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js" type="text/javascript"></script> 
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.15/jquery-ui.min.js" type="text/javascript"></script> 
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {             
+            document.write(unescape("%3Cscript src='/Scripts/jquery-1.5.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+            document.write(unescape("%3Cscript src='/Scripts/jquery-ui-1.8.11.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+   </script>    
+   <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+   @RenderSection("HeadArea", required: false)
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>
+                    Pigg MVC</h1>
+            </div>
+            <div id="logindisplay">
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+                    @Html.Partial("LoginStatusAuthenticatedUserControl");
+                }
+                else
+                {
+                    @Html.Partial("LoginStatusAnonymousUserControl");
+                }
+            </div>
+            <nav>
+                <ul id="menu">
+                    @foreach (Pigg.Model.CustomPage item in ViewBag.MenuItems)
+                    {                    
+                        <li>
+                            @Html.ActionLink(item.Title, "Details", "Home", new { Area = "", id = item.PageId }, null)
+                        </li>
+                    }
+                    @if (Context.User.Identity.IsAuthenticated && (Roles.IsUserInRole(PiggMvc3App.Helpers.Constants.AdminRole) || Roles.IsUserInRole(PiggMvc3App.Helpers.Constants.WriterRole)))
+                    {
+                        <li>
+                            @Html.ActionLink("+", "Create", "Home", new { Area = "" }, new { })
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>            
+            @Html.Partial("LanguageSelectorUserControl")
+        </footer>
+    </div>
+</body>
+</html>

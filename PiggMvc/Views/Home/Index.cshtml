@@ -1,0 +1,38 @@
+﻿@model Pigg.Model.CustomPage
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@Model.LongTitle</h1>
+                <h2>@Model.Keywords</h2>
+            </hgroup>
+            <p>
+               @Html.Raw(@Model.PageContent)
+            </p>
+        </div>
+    </section>
+}
+<h3>Pages:</h3>
+@*<ol class="round">
+    <li class="one">
+        <h5></h5>
+        ...
+        <a href="#">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5></h5>
+        ...
+        <a href="#">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5></h5>
+        ...
+        <a href="#">Learn more…</a>
+    </li>
+</ol>*@

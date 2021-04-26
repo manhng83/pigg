@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pigg.Model", "Pigg.Model\Pigg.Model.csproj", "{2D60C0EC-8A08-4A39-8184-BA2CF7CE1F9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pigg.Data", "Pigg.Data\Pigg.Data.csproj", "{6D2C2C30-4CE7-4881-BCE4-E34E473D0114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pigg.Contracts", "Pigg.Contracts\Pigg.Contracts.csproj", "{9FE36F54-7D2A-4112-ACD5-D09788F77C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pigg.CQRS", "Pigg.CQRS\Pigg.CQRS.csproj", "{C73CE6E3-B478-43A9-91C2-BDA67AFF24D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{093DC321-9E97-4881-B003-A2E4AE8868F5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiggMvc", "PiggMvc\PiggMvc.csproj", "{A8151E1B-DE05-475A-BCA4-F46C19CC07F3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Pigg.Data\\Pigg.Data.csproj
+		SccProjectName1 = Pigg.Data
+		SccLocalPath1 = Pigg.Data
+		SccProjectUniqueName2 = Pigg.Model\\Pigg.Model.csproj
+		SccProjectName2 = Pigg.Model
+		SccLocalPath2 = Pigg.Model
+		SccProjectUniqueName3 = Pigg.Contracts\\Pigg.Contracts.csproj
+		SccProjectName3 = Pigg.Contracts
+		SccLocalPath3 = Pigg.Contracts
+		SccProjectUniqueName4 = Pigg.CQRS\\Pigg.CQRS.csproj
+		SccProjectName4 = Pigg.CQRS
+		SccLocalPath4 = Pigg.CQRS
+		SccProjectUniqueName5 = PiggMvc\\PiggMvc.csproj
+		SccProjectName5 = PiggMvc
+		SccLocalPath5 = PiggMvc
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D60C0EC-8A08-4A39-8184-BA2CF7CE1F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D60C0EC-8A08-4A39-8184-BA2CF7CE1F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D60C0EC-8A08-4A39-8184-BA2CF7CE1F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D60C0EC-8A08-4A39-8184-BA2CF7CE1F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2C2C30-4CE7-4881-BCE4-E34E473D0114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2C2C30-4CE7-4881-BCE4-E34E473D0114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2C2C30-4CE7-4881-BCE4-E34E473D0114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2C2C30-4CE7-4881-BCE4-E34E473D0114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FE36F54-7D2A-4112-ACD5-D09788F77C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE36F54-7D2A-4112-ACD5-D09788F77C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE36F54-7D2A-4112-ACD5-D09788F77C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE36F54-7D2A-4112-ACD5-D09788F77C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C73CE6E3-B478-43A9-91C2-BDA67AFF24D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C73CE6E3-B478-43A9-91C2-BDA67AFF24D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C73CE6E3-B478-43A9-91C2-BDA67AFF24D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C73CE6E3-B478-43A9-91C2-BDA67AFF24D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8151E1B-DE05-475A-BCA4-F46C19CC07F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8151E1B-DE05-475A-BCA4-F46C19CC07F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8151E1B-DE05-475A-BCA4-F46C19CC07F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8151E1B-DE05-475A-BCA4-F46C19CC07F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

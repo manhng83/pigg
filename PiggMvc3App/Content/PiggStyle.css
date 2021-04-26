@@ -1,0 +1,14 @@
+﻿@import url("Site.css");
+@import url("datePicker.css");
+
+ul.languages
+{
+    list-style:none;
+}
+
+ul.languages li
+{
+    margin-left: 3px;
+    margin-right: 3px;
+    display:inline;
+}
